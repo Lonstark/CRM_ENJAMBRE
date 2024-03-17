@@ -3,15 +3,13 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Accion } from 'src/app/models/Accion/accion.model';
 import { Menu } from 'src/app/models/Menu/menu.model';
 import { Perfil } from 'src/app/models/Perfil/perfil.model';
-import { PerfilAccion } from 'src/app/models/PerfilAccion/perfil-accion.model';
 import { PerfilRegister } from 'src/app/models/PerfilRegister/perfil-register.model';
-import { PerfilSubMenuAccion } from 'src/app/models/PerfilSubMenuAccion/perfil-sub-menu-accion.model';
 import { Submenu } from 'src/app/models/SubMenu/submenu.model';
 import { PerfilService } from 'src/app/services/Perfil/perfil.service';
 import { PerfilAccionService } from 'src/app/services/PerfilAccion/perfil-accion.service';
 import { PerfilSubMenuAccionService } from 'src/app/services/PerfilSubMenuAccion/perfil-sub-menu-accion.service';
 import { UsuarioService } from 'src/app/services/Usuario/usuario.service';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-profile',
@@ -130,14 +128,6 @@ export class CreateProfileComponent implements OnInit {
 
     // Iterar sobre los submenús seleccionados
     submenusSeleccionados.forEach(submenu => {
-      /*
-      // Filtrar las acciones asociadas al submenú actual
-      const accionesSubmenu : Accion[] = [];
-      this.accionesMap.forEach((acciones, idSubmenu) => {
-        accionesSubmenu.push(...acciones.filter(accion => accion.showSubMenu));
-      });
-      console.log("accionesSubmenu = ", accionesSubmenu);
-      */
       const accionesSubmenu: Accion[] = this.accionesMap.get(submenu.idSubmenu!) || [];
       // Construir los objetos de acción y submenú para cada acción seleccionada
       accionesSubmenu.forEach(accion => {
@@ -163,18 +153,27 @@ export class CreateProfileComponent implements OnInit {
     this.perfilAccionService.registerPerfilAndAcciones(perfilRegister).subscribe(
       response => {
         console.log('Perfil registrado con éxito:', response);
+        // Mostrar SweetAlert de éxito
+        Swal.fire({
+          icon: 'success',
+          title: '¡Perfil '+perfilRegister.perfil?.nombre+' registrado correctamente!',
+          showConfirmButton: false,
+          timer: 1500 // Auto close alert after 1.5 seconds
+        });
         // Restablecer el formulario o realizar otras acciones necesarias después del registro
       },
       error => {
         console.error('Error al registrar el perfil:', error);
         // Manejar errores o mostrar mensajes de error al usuario
+        Swal.fire({
+          icon: 'error',
+          title: '¡Error!',
+          text: 'Hubo un error al registrar el perfil.',
+        });
       }
     );
 
-
   }
-
-
 
 }
 
