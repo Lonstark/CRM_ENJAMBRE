@@ -1,0 +1,28 @@
+
+<div class="border-bottom">
+    <h2 mat-dialog-title>Nuevo Cliente</h2>
+</div>
+<mat-dialog-content class="mat-typography dialog-cliente">
+  <div class="form-group">
+    <div class="row">
+        <div class="col-lg-12 mb-3">
+            <label class="form-label input-font">Nombre</label>
+            <input type="text" class="form-control  input-font" [(ngModel)]="cliente.descripcion" placeholder="Ingresa la descripcion del tipo de documento">
+            <p class="input-font">Por favor, ingresa el nombre del <b>cliente</b></p>
+        </div>
+        <div class="col-lg-12 mb-3">
+            <label class="form-label input-font">Estado</label>
+            <select [(ngModel)]="cliente.estado" class="form-select input-font" name="estado" id="estado">
+                <option value="0">[Seleccione]</option>
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+            </select>
+            <p class="input-font">Por favor, selecciona un <b>estado</b></p>
+        </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" cdkFocusInitial (click)="onRegistrar()">Registrar</button>
+</mat-dialog-actions>

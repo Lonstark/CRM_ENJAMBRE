@@ -1,0 +1,37 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ajusta la altura del componente principal al 100% del viewport */
+}
+
+.main-container {
+    flex: 1; /* Hace que el contenedor principal ocupe todo el espacio vertical disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E4E6EF
+}
+
+.sub-container{
+    width: 80%;
+    
+    overflow-y: auto;
+    overflow-x: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-body {
+    padding: 1rem; /* Ajusta el relleno del cuerpo de la tarjeta según sea necesario */
+  }
+
+  .font-button{
+    font-size: 11pt;
+  }
+
+

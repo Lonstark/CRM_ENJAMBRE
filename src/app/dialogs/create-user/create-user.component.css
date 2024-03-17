@@ -1,0 +1,63 @@
+.full-width {
+    width: 100%;
+  }
+
+  .input-font{
+    font-size: 10pt !important;
+    color: black;
+  }
+  .border-bottom h2{
+    margin: 0px;
+  }
+
+  .row p {
+    font-size: 8pt !important;
+  }
+
+  .btn-outline-danger {
+    background-color: #F3F6F9 !important;
+    border-color: #F3F6F9;
+    font-size: 10pt !important;
+    color: #F64E60;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #F64E60 !important;
+    color: #F3F6F9;
+  }
+
+  .form-control.form-control-solid {
+    background-color: #F3F6F9;
+    border-color: #F3F6F9;
+    color: #3F4254;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-container{
+  padding: 15px;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface{
+  overflow: hidden;
+}
+
+.nav-link{
+  color: #868e96;
+  font-size: 10pt;
+}
+
+.nav-link:not(.active):hover{
+  color: #FD7102;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content{
+  min-height: 660px;
+}
+
+@media (max-width: 767px) {
+  ::ng-deep .mat-mdc-dialog-container .mdc-dialog__content {
+    min-height: 600px;
+    max-height: 600px; /* ajusta el valor según tus necesidades */
+    overflow-y: auto; /* para permitir el desplazamiento vertical si el contenido es más largo que la altura máxima */
+  }
+}

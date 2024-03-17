@@ -1,0 +1,146 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+app-header {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+app-sidenav {
+  cursor: pointer;
+}
+
+/**/
+
+mat-sidenav-container{
+  height: 100%;
+}
+
+mat-sidenav{
+  background: #FD7102;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.logo .img1{
+  width: 30px !important;
+  cursor: pointer;
+}
+
+.logo .img2{
+  width: 120px !important;
+}
+
+.subHeader{
+  padding-left: 20px;
+  color: #ffff;
+}
+
+ul {
+  list-style-type: none; /* Elimina los marcadores de lista */
+  padding: 0; /* Elimina el relleno por defecto */
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+/* Estilos para los elementos de lista */
+
+/* Estilos para los enlaces */
+li a {
+  text-decoration: none; /* Quita el subrayado predeterminado */
+  color: black; /* Color del texto */
+  display: flex; /* Establece el comportamiento de caja flexible */
+  align-items: center; /* Centra verticalmente los elementos dentro del li */
+  height: 45px;
+  padding-left: 25px;
+  color: #ffff;
+}
+
+li a:hover{
+  background-color: rgb(219, 183, 8);
+  cursor: pointer;
+}
+
+/* Estilos para el ícono */
+i {
+  margin-right: 10px;
+  font-size: 12pt;
+}
+
+.submenu li a{
+  padding-left: 35px !important;
+}
+
+.submenu-option i {
+  margin-right: 1px !important;
+}
+
+.menu-option {
+  display: flex;
+  justify-content: space-between; /* Alinear los elementos en los extremos */
+  align-items: center; /* Alinear verticalmente los elementos */
+}
+
+.menu-option div {
+  flex-grow: 1; /* Hace que este div ocupe todo el espacio restante */
+}
+
+/* Establece un ancho fijo para las flechas del desplegable */
+.arrow-container {
+  width: 20px;
+  text-align: right; /* Alinea el contenido a la derecha */
+}
+
+/* Ajusta el tamaño de la flecha */
+.arrow-container i {
+  font-size: 12px;
+}
+
+/* Alinea verticalmente la flecha con el texto */
+.menu-option {
+  display: flex;
+  align-items: center;
+}
+
+/* Elimina el margen derecho del ícono en el contenedor de flechas */
+.arrow-container i {
+  margin-right: 25px;
+}
+
+/* Asegura que el tamaño del ícono de la flecha no se vea afectado */
+.bi-chevron-right, .bi-chevron-down {
+  font-size: 12px;
+}
+
+/* Asegura que el texto esté alineado correctamente con el ícono */
+.menu-option span {
+  margin-right: 10px;
+}
+
+.close-button {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .img1, .img2{
+    display: none;
+  }
+  .close-button {
+    display: block;
+  }
+.img-container{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+}

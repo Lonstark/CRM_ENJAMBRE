@@ -1,0 +1,320 @@
+<div class="border-bottom">
+  <h2 mat-dialog-title>Nuevo Usuario</h2>
+</div>
+<mat-dialog-content>
+  <div class="border p-3 rounded">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
+          role="tab" aria-controls="home-tab-pane" aria-selected="true">Datos Personales</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
+          role="tab" aria-controls="profile-tab-pane" aria-selected="false">Datos Secundarios</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button"
+          role="tab" aria-controls="contact-tab-pane" aria-selected="false">Datos Salariales</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="certificado-tab" data-bs-toggle="tab" data-bs-target="#certificado-tab-pane"
+          type="button" role="tab" aria-controls="certificado-tab-pane" aria-selected="false">Certificado</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="zona-tab" data-bs-toggle="tab" data-bs-target="#zona-tab-pane" type="button"
+          role="tab" aria-controls="zona-tab-pane" aria-selected="false">Zona</button>
+      </li>
+    </ul>
+    <div class="tab-content mt-4" id="myTabContent">
+      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <!-- Contenido de Datos Personales -->
+        <div class="row">
+          <div class="col-lg-2">
+            <label class="form-label input-font">Código</label>
+            <input type="text" class="form-control input-font form-control-solid" placeholder="Ingresa el Código" [(ngModel)]="usuario.idUsuario" name="idUsuario">
+            <p class="input-font">Por favor, ingresa el <b>código</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Nombres</label>
+            <input type="text" class="form-control input-font form-control-solid" placeholder="Ingresa los nombres" [(ngModel)]="usuario.nombres" name="nombres">
+            <p class="input-font">Por favor, ingresa los <b>nombre</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Apellidos</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa los apellidos" [(ngModel)]="usuario.apellidos" name="apellidos">
+            <p class="input-font">Por favor, ingresa los <b>apellidos</b></p>
+          </div>
+          <div class="col-lg-2">
+            <label class="form-label input-font">Empresa</label>
+            <select class="select2 form-control input-font" name="" id="selectEmpresa">
+              <option disabled value="0">[Seleccione]</option>
+              <option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">{{ empresa.descripcion }}</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>sexo</b></p>
+          </div>
+          <div class="col-lg-2">
+            <label class="form-label input-font">Sexo</label>
+            <select class="select2 form-control input-font" name="" id="selectGender">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Masculino</option>
+              <option value="2">Femenino</option>
+              <option value="3">Otros</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>sexo</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Tipo documento</label>
+            <select class="select2 form-control input-font" name="" id="selectDocument">
+              <option disabled value="0">[Seleccione]</option>
+              <option *ngFor="let tipoDocumento of tiposDocumentos" [value]="tipoDocumento.idTipoDocumento">{{ tipoDocumento.descripcion }}</option>
+            </select>
+            <p class="input-font">Por favor, seleccione un tipo de <b>documento</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Documento</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa el documento" [(ngModel)]="usuario.documento" name="documento">
+            <p class="input-font">Por favor, ingresa el <b>documento</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Fecha Nacimiento</label>
+            <input type="date" class="form-control  input-font form-control-solid" [(ngModel)]="usuario.fechaNacimiento" name="fechaNacimiento">
+            <p class="input-font">Por favor, ingresa la fecha de <b>nacimiento</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Correo</label>
+            <input type="email" class="form-control  input-font form-control-solid" placeholder="Ingresa el correo" [(ngModel)]="usuario.email" name="email">
+            <p class="input-font">Por favor, ingresa el <b>correo</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Departamento</label>
+            <select class="select2 form-control input-font" name="selectDepartamento" id="selectDepartamento" >
+              <option disabled value="0">[Seleccione]</option>
+              <option *ngFor="let departamento of departamentos" [value]="departamento.departamento">{{ departamento.departamento }}</option>
+            </select>
+            <p class="input-font">Por favor, selecciona un <b>departamento</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Provincia</label>
+            <select class="select2 form-control input-font" name="selectProvincia" id="selectProvincia">
+              <option disabled value="0">[Seleccione]</option>
+              <option *ngFor="let provincia of provincias" [value]="provincia.provincia">{{ provincia.provincia }}</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>provincia</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Distrito</label>
+            <select class="select2 form-control input-font" name="selectDistrito" id="selectDistrito">
+              <option disabled value="0">[Seleccione]</option>
+              <option *ngFor="let distrito of distritos" [value]="distrito.idUbigeo">{{ distrito.distrito }}</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>empresa</b></p>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="form-label input-font">Dirección</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa la dirección" [(ngModel)]="usuario.direccion" name="direccion">
+            <p class="input-font">Por favor, ingresa la <b>dirección</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Referencia</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa la referencia" [(ngModel)]="usuario.referencia" name="referencia">
+            <p class="input-font">Por favor, ingresa la <b>referencia</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Celular</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa el celular" [(ngModel)]="usuario.celular" name="celular">
+            <p class="input-font">Por favor, ingresa el <b>celular</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Celular referencia</label>
+            <input type="text" class="form-control  input-font form-control-solid"
+              placeholder="Ingresa el celular de referencia" [(ngModel)]="usuario.celularRef" name="celularRef">
+            <p class="input-font">Por favor, ingresa el <b>celular de referencia</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <!-- Contenido de Datos Secundarios -->
+        <div class="row">
+          <div class="col-lg-6">
+            <label class="form-label input-font">Estado Civil</label>
+            <select class="select2 form-control input-font" name="" id="selectCivil">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Soltero</option>
+              <option value="2">Casado</option>
+              <option value="3">Viudo</option>
+              <option value="4">Divorciado</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>estado civil</b></p>
+          </div>
+          <div class="col-lg-6">
+            <label class="form-label input-font">Conyugue</label>
+            <input type="text" class="form-control input-font form-control-solid" placeholder="Ingresa el nombre" [(ngModel)]="usuario.nombreConyuguente" name="nombreConyuguente">
+            <p class="input-font">Por favor, ingresa los <b>nombres</b></p>
+          </div>
+          <div class="col-lg-6">
+            <label class="form-label input-font">N. Hijos</label>
+            <input type="number" class="form-control input-font form-control-solid"
+              placeholder="Ingresa el n. de hijos" [(ngModel)]="usuario.nhijos" name="nhijos">
+            <p class="input-font">Por favor, ingresa el n° de <b>hijos</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+        <!-- Contenido de Datos Económicos -->
+        <div class="row">
+          <div class="col-lg-4">
+            <label class="form-label input-font">Banco</label>
+            <select class="select2 form-control input-font" name="" id="selectBanco">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">BCP</option>
+              <option value="2">Interbank</option>
+              <option value="3">Scotiabank</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>banco</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Tipo de cuenta</label>
+            <select class="select2 form-control input-font" name="" id="selectTipoCuenta">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Cuenta de Ahorros</option>
+              <option value="2">Cuenta Corriente</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>banco</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Moneda</label>
+            <select class="select2 form-control input-font" name="" id="selectMoneda">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Soles</option>
+              <option value="2">Dolares</option>
+              <option value="3">Euros</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>banco</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">N° cuenta</label>
+            <input type="text" class="form-control input-font form-control-solid" placeholder="Ingresa el numero" [(ngModel)]="usuario.numeroCuenta" name="numeroCuenta">
+            <p class="input-font">Por favor, ingresa el n° de <b>cuenta</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">N° CCI</label>
+            <input type="text" class="form-control input-font form-control-solid" placeholder="Ingresa el numero" [(ngModel)]="usuario.ncci" name="ncci">
+            <p class="input-font">Por favor, ingresa el n° de <b>cci</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Ruc</label>
+            <input type="text" class="form-control input-font form-control-solid"
+              placeholder="Ingresa el numero de ruc" [(ngModel)]="usuario.ruc" name="ruc">
+            <p class="input-font">Por favor, ingresa el numero de <b>ruc</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Perfil</label><br>
+            <select class="select2 form-control input-font" name="" id="selectPerfil" multiple>
+              <option value="1">Administardor</option>
+              <option value="2">Coordinador</option>
+              <option value="3">Supervisor</option>
+              <option value="3">Vendedor</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>perfil</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="certificado-tab-pane" role="tabpanel" aria-labelledby="certificado-tab"
+        tabindex="0">
+        <!-- Contenido de Certificado -->
+        <div class="form-group form-container border-top pt-4">
+          <h2 class="input-font" style="font-size: 12pt !important;">Trabajador:</h2>
+          <button class="btn btn-primary input-font text-white" (click)="agregarCertificado()">Agregar</button>
+          <div class="mt-2 table-responsive">
+            <table class="table">
+              <thead class="text-dark border-bottom" style="font-size: 9pt;">
+                <th>
+                  CLIENTE EXTERNO - CERTIFICADO
+                </th>
+                <th>
+                  INICIO DE VIGENCIA
+                </th>
+                <th>
+                  FIN DE VIGENCIA
+                </th>
+                <th>
+                  VIGENTE
+                </th>
+                <th>
+
+                </th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let certificado of certificados; let i = index">
+                  <td class="pe-2">
+                    <select class="form-select input-font mt-2" name="" [(ngModel)]="certificado.certificado"
+                      id="">
+                      <option value="1">Certificado 1</option>
+                      <option value="2">Certificado 2</option>
+                    </select>
+                  </td>
+                  <td class="pe-2">
+                    <input class="form-control mt-2 input-font form-control-solid" type="date" name="fechaInicio"
+                      [(ngModel)]="certificado.fechaInicio" (change)="validarVigencia(certificado)">
+                  </td>
+                  <td class="pe-2">
+                    <input class="form-control mt-2 input-font form-control-solid" type="date" name="fechaFin"
+                      [(ngModel)]="certificado.fechaFin" (change)="validarVigencia(certificado)">
+                  </td>
+                  <td class="pe-2">
+                    <p class="input-font mt-2 input-font" *ngIf="certificado.fechaInicio && certificado.fechaFin">{{
+                      certificado.vigente ? 'Si' : 'No' }}</p>
+                  </td>
+                  <td><button class="btn btn-outline-danger mt-2" (click)="eliminarCertificado(i)"><i
+                        class="fa-solid fa-trash"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="zona-tab-pane" role="tabpanel" aria-labelledby="zona-tab" tabindex="0">
+        <!-- Contenido de Zona -->
+        <div class="form-group form-container border-top pt-4">
+          <div class="row">
+            <div class="col-lg-4">
+              <label class="form-label input-font">Zona</label>
+              <select class="select2 form-control input-font" name="" id="selectZona" multiple>
+                <option value="1">NORTE</option>
+                <option value="2">SUR</option>
+                <option value="3">ESTE</option>
+                <option value="3">OESTE</option>
+              </select>
+              <p class="input-font">Por favor, selecciona el <b>perfil</b></p>
+            </div>
+            <div class="col-lg-4">
+              <label class="form-label input-font">Area</label>
+              <select class="select2 form-control input-font" name="" id="selectArea" multiple>
+                <option value="1">NORTE</option>
+                <option value="2">SUR</option>
+                <option value="3">ESTE</option>
+                <option value="3">OESTE</option>
+              </select>
+              <p class="input-font">Por favor, selecciona el <b>area</b></p>
+            </div>
+            <div class="col-lg-4">
+              <label class="form-label input-font">Sub-Area</label>
+              <select class="select2 form-control input-font" name="" id="selectSubArea" multiple>
+                <option value="1">NORTE</option>
+                <option value="2">SUR</option>
+                <option value="3">ESTE</option>
+                <option value="3">OESTE</option>
+              </select>
+              <p class="input-font">Por favor, selecciona el <b>subarea</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" cdkFocusInitial (click)="onRegistrar()">Registrar</button>
+</mat-dialog-actions>

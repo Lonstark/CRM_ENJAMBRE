@@ -1,0 +1,117 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Ajusta la altura del componente principal al 100% del viewport */
+  }
+  
+  .main-container {
+    flex: 1;
+    /* Hace que el contenedor principal ocupe todo el espacio vertical disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E4E6EF
+  }
+  
+  .sub-container {
+    width: 80%;
+  
+    overflow-y: auto;
+    overflow-x: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-body {
+    padding: 1rem;
+    /* Ajusta el relleno del cuerpo de la tarjeta según sea necesario */
+  }
+  
+  .font-button {
+    font-size: 10pt;
+  }
+  
+  .help-input {
+    font-size: 8pt;
+    margin-top: 2px;
+    font-weight: 400;
+  }
+  
+  .btn-outline-primary {
+    background-color: #F3F6F9 !important;
+    border-color: #F3F6F9;
+    color: #3699FF;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #3699FF !important;
+    color: #F3F6F9;
+  }
+  
+  .btn-outline-danger {
+    background-color: #F3F6F9 !important;
+    border-color: #F3F6F9;
+    color: #F64E60;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #F64E60 !important;
+    color: #F3F6F9;
+  }
+  
+  .text-muted{
+    color: #B5B5C3 !important;
+    
+  }
+  
+  .custom-table {
+    max-width: 800px;
+  }
+  
+  .table-container {
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 5px;
+    border: 1px solid #EBEDF3;
+  }
+
+  .custom-table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #FD7102;
+    color: #ffff;
+  }
+  
+  .size-input{
+    font-size: 10pt;
+  }
+  
+  .card-header{
+    border-bottom: 1px solid #EBEDF3;
+  }
+  
+  .modal {
+    z-index: 999999999; /* Establece un z-index mayor que el del sidenav */
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .size-input{
+      font-size: 9pt;
+    }
+    table tr{
+      font-size: 9pt;
+    }
+    .font-button {
+      font-size: 9pt;
+    }
+    .table-container {
+      height: 350px;
+    }
+  }

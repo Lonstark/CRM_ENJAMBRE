@@ -1,0 +1,53 @@
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffff;
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+.toolbar {
+    padding: 0 16px;
+    background-color: #ffffff;
+}
+
+.menu-toggle {
+    margin-right: 16px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-size: 10pt;
+}
+
+.user-menu-button {
+    margin-left: 15px;
+    border: 1px solid #FD7102;
+    background: #FD7102;
+}
+
+.font-button{
+    font-size: 10pt;
+}
+
+.font-perfil{
+    font-size: 10pt !important;
+}
+
+.perfil-detail{
+    display: none !important;
+}
+@media only screen and (max-width: 768px) {
+    .nombre-perfil{
+        display: none !important;
+    }
+    .perfil-detail{
+        display: block !important;
+    }
+  }

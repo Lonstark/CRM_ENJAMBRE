@@ -1,0 +1,50 @@
+
+<div class="border-bottom">
+    <h2 mat-dialog-title>Nueva Empresa</h2>
+</div>
+<mat-dialog-content class="mat-typography">
+  <div class="form-group">
+    <div class="row">
+        <div class="col-lg-12">
+            <label class="form-label input-font">Razon Social</label>
+            <input type="text" class="form-control input-font" placeholder="Ingresa la razon social" [(ngModel)]="empresa.descripcion">
+            <p class="input-font">Por favor, ingresa la <b>razon social</b></p>
+        </div>
+        <div class="col-lg-12">
+            <label class="form-label input-font">Ruc</label>
+            <input type="text" class="form-control  input-font" placeholder="Ingresa el ruc" [(ngModel)]="empresa.ruc">
+            <p class="input-font">Por favor, ingresa el <b>ruc</b></p>
+        </div>
+        <div class="col-lg-12">
+            <label class="form-label input-font">Correo</label>
+            <input type="email" class="form-control  input-font" placeholder="Ingresa el correo" [(ngModel)]="empresa.correo">
+            <p class="input-font">Por favor, ingresa el <b>correo</b></p>
+        </div>
+        <div class="col-lg-12">
+            <label class="form-label input-font">Direccion</label>
+            <input type="text" class="form-control  input-font" placeholder="Ingresa la direccion" [(ngModel)]="empresa.direccion">
+            <p class="input-font">Por favor, ingresa la <b>direccion</b></p>
+        </div>
+        <div class="col-lg-12">
+            <label class="form-label input-font">Clientes</label>
+            <select multiple class="select2 form-control input-font" name="clientes" id="clientes">
+              <option *ngFor="let cliente of clientes" [value]="cliente.idCliente">{{ cliente.descripcion }}</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>cliente</b></p>
+        </div>
+        <div class="col-lg-12">
+            <label class="form-label input-font">Estado</label>
+            <select [(ngModel)]="empresa.estado" class="form-select input-font">
+                <option value="0">[Seleccione]</option>
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+            </select>
+            <p class="input-font">Por favor, selecciona un <b>estado</b></p>
+        </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" cdkFocusInitial (click)="onRegistrar()">Registrar</button>
+</mat-dialog-actions>

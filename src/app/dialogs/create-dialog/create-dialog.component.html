@@ -1,0 +1,28 @@
+
+<div class="border-bottom">
+    <h2 mat-dialog-title>Nuevo Documento</h2>
+</div>
+<mat-dialog-content class="mat-typography dilaog-documento">
+  <div class="form-group">
+    <div class="row">
+        <div class="col-lg-12 mb-3">
+            <label class="form-label input-font">Descripcion</label>
+            <input [(ngModel)]="tipoDocumento.descripcion" type="text" class="form-control  input-font" placeholder="Ingresa la descripcion del tipo de documento">
+            <p class="input-font">Por favor, ingresa la <b>descripción</b></p>
+        </div>
+        <div class="col-lg-12 mb-3">
+            <label class="form-label input-font">Estado</label>
+            <select [(ngModel)]="tipoDocumento.estado" class="form-select  input-font" name="estado" id="estado">
+              <option value="0">[Seleccione]</option>
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+            </select>
+            <p class="input-font">Por favor, selecciona un <b>estado</b></p>
+        </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" cdkFocusInitial (click)="onRegistrar()">Registrar</button>
+</mat-dialog-actions>

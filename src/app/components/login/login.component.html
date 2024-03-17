@@ -1,0 +1,30 @@
+<!-- login.component.html -->
+<div class="container-login">
+  <div class="logo-isotipo-login">
+    <img class="logo" src="../../../assets/img/logo-isotipo.png">
+    <img class="marca" src="../../../assets/img/logo-marca.png">
+  </div>
+  <div class="container-form-login">
+    <mat-card>
+      <mat-card-content>
+        <form class="formulario" (ngSubmit)="onSubmit()">
+          <mat-form-field class="input-font" appearance="outline">
+            <mat-label class="form-label">Usuario</mat-label>
+            <input matInput type="email" name="email" [(ngModel)]="usuario.email" placeholder="Ingrese su Usuario" required>
+            <!--<mat-hint>Error*</mat-hint>-->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="input-font">
+            <mat-label class="form-label">Contraseña</mat-label>
+            <input class="input" matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="usuario.contrasenia" placeholder="Ingrese su contraseña" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <button class="button" mat-raised-button color="primary" type="submit">Ingresar</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <p class="text-center text-white">by Digetel Group</p>
+</div>

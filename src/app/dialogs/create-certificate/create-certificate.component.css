@@ -1,0 +1,25 @@
+.full-width {
+  width: 100%;
+}
+
+.input-font{
+  font-size: 10pt !important;
+  color: black;
+}
+
+.border-bottom h2{
+  margin: 0px;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface{
+  overflow: hidden;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content .dialog-certificado{
+  height: 350px !important;
+}
+
+.input-font-help{
+  font-size: 8pt !important;
+  color: black;
+}

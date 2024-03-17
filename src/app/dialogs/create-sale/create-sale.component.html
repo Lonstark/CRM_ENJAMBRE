@@ -1,0 +1,457 @@
+<div class="border-bottom">
+  <h2 mat-dialog-title>Nuevo Venta</h2>
+</div>
+<mat-dialog-content>
+  <div class="border p-3 rounded">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
+          role="tab" aria-controls="home-tab-pane" aria-selected="true">Datos Cliente</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
+          role="tab" aria-controls="profile-tab-pane" aria-selected="false">Datos Venta</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button"
+          role="tab" aria-controls="contact-tab-pane" aria-selected="false">Documentacion</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="certificado-tab" data-bs-toggle="tab" data-bs-target="#certificado-tab-pane"
+          type="button" role="tab" aria-controls="certificado-tab-pane" aria-selected="false">Audio Evaluacion</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="zona-tab" data-bs-toggle="tab" data-bs-target="#zona-tab-pane" type="button"
+          role="tab" aria-controls="zona-tab-pane" aria-selected="false">Registro Conecta</button>
+      </li>
+      <!-- Nuevas secciones -->
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="estado-venta-tab" data-bs-toggle="tab" data-bs-target="#estado-venta-tab-pane"
+          type="button" role="tab" aria-controls="estado-venta-tab-pane" aria-selected="false">Estado Venta</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="instalacion-tab" data-bs-toggle="tab" data-bs-target="#instalacion-tab-pane"
+          type="button" role="tab" aria-controls="instalacion-tab-pane" aria-selected="false">Instalación</button>
+      </li>
+    </ul>
+    <div class="tab-content mt-4" id="myTabContent">
+      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <!-- Contenido de Datos Personales -->
+        <div class="row">
+          <div class="col-lg-3">
+            <label class="form-label input-font">Código</label>
+            <input type="text" disabled class="form-control input-font form-control-solid">
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Nombres</label>
+            <input type="text" class="form-control input-font form-control-solid" placeholder="Ingresa los nombres">
+            <p class="input-font">Por favor, ingresa los <b>nombre</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Apellidos</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa los apellidos">
+            <p class="input-font">Por favor, ingresa los <b>apellidos</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Tipo documento</label>
+            <select class="select2 form-control input-font" name="" id="selectDocument">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">DNI</option>
+              <option value="2">PASAPORTE</option>
+              <option value="2">CARNET</option>
+            </select>
+            <p class="input-font">Por favor, seleccione un tipo de <b>documento</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Documento</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa el documento">
+            <p class="input-font">Por favor, ingresa el <b>documento</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Departamento</label>
+            <select class="select2 form-control input-font" name="" id="selectDepartamento">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2">3</option>
+            </select>
+            <p class="input-font">Por favor, selecciona un <b>departamento</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Provincia</label>
+            <select class="select2 form-control input-font" name="" id="selectProvincia">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2">3</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>provincia</b></p>
+          </div>
+          <div class="col-lg-3">
+            <label class="form-label input-font">Distrito</label>
+            <select class="select2 form-control input-font" name="" id="selectDistrito">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2">3</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>empresa</b></p>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="form-label input-font">N° Contacto 1</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa la dirección">
+            <p class="input-font">Por favor, ingresa el<b>número</b></p>
+          </div>
+
+
+          
+          <div class="col-lg-8">
+            <label class="form-label input-font">Dirección</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa la dirección">
+            <p class="input-font">Por favor, ingresa la <b>dirección</b></p>
+          </div>
+
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">N° Contacto 2</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa la dirección">
+            <p class="input-font">Por favor, ingresa el<b>número</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">N° Contacto 3</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa la dirección">
+            <p class="input-font">Por favor, ingresa el<b>número</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Whatsapp</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa la dirección">
+            <p class="input-font">Por favor, ingresa su <b>Whatsapp</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Correo</label>
+            <input type="email" class="form-control  input-font form-control-solid" placeholder="Ingresa el correo">
+            <p class="input-font">Por favor, ingresa el <b>correo</b></p>
+          </div>
+
+          <!--
+          
+          
+          <div class="col-lg-4">
+            <label class="form-label input-font">Fecha Nacimiento</label>
+            <input type="date" class="form-control  input-font form-control-solid">
+            <p class="input-font">Por favor, ingresa la fecha de <b>nacimiento</b></p>
+          </div>
+          
+          
+
+          
+          <div class="col-lg-4">
+            <label class="form-label input-font">Referencia</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa la referencia">
+            <p class="input-font">Por favor, ingresa la <b>referencia</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Celular</label>
+            <input type="text" class="form-control  input-font form-control-solid" placeholder="Ingresa el celular">
+            <p class="input-font">Por favor, ingresa el <b>celular</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Celular referencia</label>
+            <input type="text" class="form-control  input-font form-control-solid"
+              placeholder="Ingresa el celular de referencia">
+            <p class="input-font">Por favor, ingresa el <b>celular de referencia</b></p>
+          </div>-->
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <!-- Contenido de Datos Secundarios -->
+        <div class="row">
+          <div class="col-lg-3">
+            <label class="form-label input-font">Canal de Venta</label>
+            <select class="select2 form-control input-font" name="" id="selectCivil">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Soltero</option>
+              <option value="2">Casado</option>
+              <option value="3">Viudo</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>canal</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Tipo de Inmueble</label>
+            <select class="select2 form-control input-font" name="" id="selectEmpresa">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">DAS</option>
+              <option value="2">DIGETEL</option>
+              <option value="2">OTROS</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>tipo</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Tipo de Plan Contrato</label>
+            <select class="select2 form-control input-font" name="" id="selectGender">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Masculino</option>
+              <option value="2">Femenino</option>
+              <option value="2">Otros</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>tipo de plan</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Plan Contratado</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Perú</option>
+              <option value="2">Venezuela</option>
+              <option value="2">Chile</option>
+            </select>
+            <p class="input-font">Por favor, selecciona el <b>plan</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Cuotas pago instalación</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Perú</option>
+              <option value="2">Venezuela</option>
+              <option value="2">Chile</option>
+            </select>
+            <p class="input-font">Por favor, selecciona las <b>cuotas</b></p>
+          </div>
+
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Cantidad de Mesh</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Perú</option>
+              <option value="2">Venezuela</option>
+              <option value="2">Chile</option>
+            </select>
+            <p class="input-font">Por favor, selecciona la <b>cantidad de mesh</b></p>
+          </div>
+
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Mesh Cableado</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Si</option>
+              <option value="2">No</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>opcion</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Cuotas Pago Instalacion Mesh</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Si</option>
+              <option value="2">No</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>opcion</b></p>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="form-label input-font">Coordenadas</label>
+            <input type="text" class="form-control input-font form-control-solid" placeholder="Ingresa las coordenadas">
+            <p class="input-font">Por favor, ingresa las <b>coordenadas</b></p>
+          </div>
+          <div class="col-lg-4">
+            <label class="form-label input-font">Code Plus</label>
+            <input type="text" class="form-control input-font form-control-solid" placeholder="Ingresa el code plus">
+            <p class="input-font">Por favor, ingresa el <b>code plus</b></p>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="form-label input-font">Winbox</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Si</option>
+              <option value="2">No</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>opcion</b></p>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="form-label input-font">Observaciones</label>
+            <textarea class="form-control form-control-solid input-font" id="exampleFormControlTextarea1"
+              rows="2"></textarea>
+            <p class="input-font">Por favor, ingresa el <b>code plus</b></p>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="form-label input-font">Tipo Venta</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Si</option>
+              <option value="2">No</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>opcion</b></p>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="form-label input-font">Factivilidad</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Si</option>
+              <option value="2">No</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>opcion</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Fecha Programada Instalación</label>
+            <input type="date" class="form-control form-control-solid input-font">
+            <p class="input-font">Por favor, selecciona una <b>fecha</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Fecha Programada Instalación</label>
+            <input type="time" class="form-control form-control-solid input-font">
+            <p class="input-font">Por favor, selecciona una <b>fecha</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Cuadrilla</label>
+            <select class="select2 form-control input-font" name="" id="selectCountry">
+              <option disabled value="0">[Seleccione]</option>
+              <option value="1">Si</option>
+              <option value="2">No</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>cuadrilla</b></p>
+          </div>
+
+          <div class="col-lg-3">
+            <label class="form-label input-font">Portabilidad</label>
+            <input type="text" class="form-control form-control-solid input-font">
+            <p class="input-font">Por favor, ingresa la <b>portabilidad</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+        <!-- Contenido de Datos Económicos -->
+        <div class="row">
+          <div class="col-lg-4">
+            <label class="form-label input-font">Cargar Documentación</label>
+            <input type="file" class="form-control form-control-solid input-font">
+            <p class="input-font">Por favor, sube un <b>archivo</b></p>
+          </div>
+          <div class="col-lg-12 row">
+            <div class="col-lg-3">
+              <label class="form-label input-font">Imagen delantera Documento Identidad</label>
+              <img width="350px"
+                src="https://depor.com/resizer/RmSNoSbuM_O2iuEt8qICyu3DdSw=/580x330/smart/filters:format(jpeg):quality(90)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/CMRV7MK6URFMFLF2KW2UICQXUA.jpg"
+                alt="">
+              <button class="btn btn-light mt-2" style="width: 350px;"><i
+                  class="fa-solid fa-cloud-arrow-down"></i></button>
+            </div>
+            <div class="col-lg-3">
+              <label class="form-label input-font">Imagen Trasera Documento Identidad</label>
+              <img width="350px"
+                src="https://depor.com/resizer/RmSNoSbuM_O2iuEt8qICyu3DdSw=/580x330/smart/filters:format(jpeg):quality(90)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/CMRV7MK6URFMFLF2KW2UICQXUA.jpg"
+                alt="">
+              <button class="btn btn-light mt-2" style="width: 350px;"><i
+                  class="fa-solid fa-cloud-arrow-down"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="certificado-tab-pane" role="tabpanel" aria-labelledby="certificado-tab"
+        tabindex="0">
+        <!-- Contenido de Certificado -->
+        <div class="form-group form-container border-top pt-4">
+          <div class="row">
+            <div class="col-lg-3">
+              <label class="form-label input-font">Cargar Audio Evaluación</label>
+              <input type="file" class="form-control form-control-solid input-font">
+              <button class="btn btn-light mt-2 w-100"><i class="fa-solid fa-cloud-arrow-down"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="zona-tab-pane" role="tabpanel" aria-labelledby="zona-tab" tabindex="0">
+        <!-- Contenido de Zona -->
+        <div class="form-group form-container border-top pt-4">
+          <div class="row">
+            <div class="col-lg-3">
+              <label class="form-label input-font">Fecha Registro</label>
+              <input type="date" class="form-control form-control-solid input-font">
+              <p class="input-font">Por favor, selecciona una <b>fecha</b></p>
+            </div>
+
+            <div class="col-lg-3">
+              <label class="form-label input-font">N° Contrato</label>
+              <input type="text" class="form-control form-control-solid input-font" placeholder="N° contrato">
+              <p class="input-font">Por favor, ingresa el numero de <b>contrato</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Nuevas áreas de contenido -->
+      <div class="tab-pane fade" id="estado-venta-tab-pane" role="tabpanel" aria-labelledby="estado-venta-tab"
+        tabindex="0">
+        <!-- Contenido de Estado Venta -->
+        <div class="form-group form-container border-top pt-4">
+          <div class="row">
+            <div class="col-lg-4">
+              <label class="form-label input-font">Estado Venta</label>
+              <select class="select2 form-control input-font" name="" id="selectCountry">
+                <option disabled value="0">[Seleccione]</option>
+                <option value="1">Si</option>
+                <option value="2">No</option>
+              </select>
+            </div>
+            <div class="col-lg-8">
+              <label class="form-label input-font">Observaciones</label>
+              <textarea class="form-control form-control-solid input-font" id="exampleFormControlTextarea1"
+                rows="2" placeholder="Observaciones"></textarea>
+              <p class="input-font">Por favor, ingresa las <b>observaciones</b></p>
+            </div>
+            <div class="col-lg-4">
+              <label class="form-label input-font">Telefono Contrato</label>
+              <input type="text" class="form-control form-control-solid input-font" placeholder="N° contrato">
+              <p class="input-font">Por favor, ingresa el telefono de <b>contrato</b></p>
+            </div>
+            <div class="col-lg-4">
+              <label class="form-label input-font">Comentario Validación</label>
+              <textarea class="form-control form-control-solid input-font" id="exampleFormControlTextarea1"
+                rows="2" placeholder="Comentario Validación"></textarea>
+              <p class="input-font">Por favor, ingresa el <b>comentario</b></p>
+            </div>
+            <div class="col-lg-4">
+              <label class="form-label input-font">Motivo No Instalación</label>
+              <textarea class="form-control form-control-solid input-font" id="exampleFormControlTextarea1"
+                rows="2" placeholder="Motivo No Instalación"></textarea>
+              <p class="input-font">Por favor, ingresa el <b>motivo</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="instalacion-tab-pane" role="tabpanel" aria-labelledby="instalacion-tab"
+        tabindex="0">
+        <!-- Contenido de Instalación -->
+        <div class="form-group form-container border-top pt-4">
+          <div class="row">
+            <div class="col-lg-3">
+              <label class="form-label input-font">Fecha Instalación</label>
+              <input type="date" class="form-control form-control-solid input-font">
+              <p class="input-font">Por favor, ingresa una <b>fecha</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Registrar</button>
+</mat-dialog-actions>

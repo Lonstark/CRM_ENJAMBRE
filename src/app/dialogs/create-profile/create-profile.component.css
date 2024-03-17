@@ -1,0 +1,17 @@
+.full-width {
+    width: 100%;
+  }
+
+  .input-font{
+    font-size: 10pt !important;
+    color: black;
+  }
+  .border-bottom h2{
+    margin: 0px;
+  }
+
+  ::ng-deep .mat-mdc-dialog-container .mdc-dialog__content{
+    min-height: 250px !important;
+  }
+  
+  

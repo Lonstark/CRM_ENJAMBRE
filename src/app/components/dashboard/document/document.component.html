@@ -1,0 +1,68 @@
+<div class="main-container">
+  <div class="sub-container card m-5">
+    <div class="card-header p-3 bg-white d-flex justify-content-between align-items-center">
+      <h3 class="mb-0">Listado de Tipos de documentos</h3>
+      <div>
+        <button class="btn btn-primary me-2 font-button" (click)="openNuevoDialog()">Nuevo Documento</button>
+      </div>
+    </div>
+    <div class="table-center card-body">
+      <div class="">
+        <div class="form-group row">
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-lg-4">
+                <select class="select2 form-select size-input" id="selectEstados" aria-label="Default select example">
+                  <option selected>Todos</option>
+                  <option value="1">Activo</option>
+                  <option value="2">Inactivo</option>
+                </select>
+                <p class="help-input text-muted"><b>Filtrar</b> por Estado</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <input matInput (keyup)="applyFilter($event)" type="text" class="form-control size-input" id="" placeholder="Buscar">
+            <p class="help-input text-muted"><b>Filtrar</b> en todos los campos</p>
+          </div>
+        </div>
+      </div>
+        <div class="table-container table-responsive mb-3">
+          <table mat-table [dataSource]="dataSource" class="custom-table" matSort>
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> N. </th>
+              <td mat-cell *matCellDef="let row"> {{row.idTipoDocumento}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+              <td mat-cell *matCellDef="let row"> {{row.descripcion}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Estado </th>
+              <td mat-cell *matCellDef="let row"> {{ row.estado === 1 ? 'Activo' : 'Inactivo' }} </td>
+            </ng-container>
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let row">
+                <button class="btn btn-outline-primary me-2 btn-sm" (click)="openUpdateDocumentoDialog(row.idTipoDocumento)"><i class="bi bi-pencil-square"></i></button>
+                <button class="btn btn-outline-danger btn-sm" (click)="confirmarDesactivarDocumento(row.idTipoDocumento, row)"><i class="bi bi-trash"></i></button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+
+      </div>
+    <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons aria-label="Select page of periodic elements"></mat-paginator>
+    </div>
+  </div>
+</div>

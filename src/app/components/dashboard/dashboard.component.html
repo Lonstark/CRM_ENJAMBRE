@@ -1,0 +1,60 @@
+<!-- <mat-drawer-container>
+    <mat-drawer [mode]="isHandset ? 'over' : 'side'" [opened]="sideBarOpen">
+        <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header (toggleSidebar)="sideBarToggler()"></app-header>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+-->
+
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav [mode]="isHandset ? 'over' : 'side'" opened="true" [style.width.px]="isExpanded ? 280 : 64"
+        [opened]="isSideNavOpen">
+        <mat-nav-list>
+            <div class="logo">
+                <div class="img-container d-flex justify-content-center align-items-end"
+                    (click)="isExpanded = !isExpanded">
+                    <img class="img1" src="../../../../assets/img/logo-isotipo.png" alt="logo enjambre">
+                    <img *ngIf="isExpanded" class="img2" src="../../../../assets/img/logo-marca.png"
+                        alt="logo enjambre">
+                    <button *ngIf="isHandset" mat-icon-button (click)="toggleSideNav()" class="close-button">
+                        <div class="text-white"><mat-icon>close</mat-icon></div>
+                    </button>
+                </div>
+            </div>
+            <h2 class="subHeader" *ngIf="isExpanded">APLICACIONES</h2>
+            <div>
+                <ul>
+                    <li *ngFor="let menu of menus">
+                        <a class="menu-option" (click)="toggleSubMenu(menu.idMenu)">
+                            <div>
+                                <span class="d-flex">
+                                    <i class="{{ menu.icono }}"></i>
+                                    <nav *ngIf="isExpanded">{{ menu.nombre }}</nav>
+                                </span>
+                            </div>
+                            <div class="arrow-container" *ngIf="isExpanded">
+                                <i class="bi"
+                                    [ngClass]="{'bi-chevron-right': !isSubMenuVisible(menu.idMenu), 'bi-chevron-down': isSubMenuVisible(menu.idMenu)}"></i>
+                            </div>
+                        </a>
+                        <ul class="submenu" *ngIf="subMenusState[menu.idMenu!] && submenus[menu.idMenu!]"
+                            [@slideDown]>
+                            <li *ngFor="let submenu of submenus[menu.idMenu!]">
+                                <a *ngIf="isExpanded" class="submenu-option" [routerLink]="'/dashboard/'+ submenu.nombre"
+                                    routerLinkActive="list-item-active" (click)="$event.preventDefault()">
+                                    <i class="bi bi-dot"></i>{{ submenu.nombre }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <div>
+        <app-header (toggleSidebar)="toggleSideNav()"></app-header>
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>

@@ -1,0 +1,40 @@
+
+<div class="border-bottom">
+    <h2 mat-dialog-title>Actualizar Area</h2>
+</div>
+<mat-dialog-content class="mat-typography dialog-area">
+  <div class="form-group">
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="hidden" [(ngModel)]="area.idArea">
+            <label class="form-label input-font">Empresa</label>
+            <select multiple class="select2 form-control input-font" name="empresas" id="empresas">
+              <option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">{{ empresa.descripcion }}</option>
+            </select>
+            <p class="input-font">Por favor, selecciona una <b>empresa</b></p>
+        </div>
+        <div class="col-lg-12">
+            <label class="form-label input-font">Nombre</label>
+            <input [(ngModel)]="area.nombre" type="text" class="form-control  input-font" name="nombre" placeholder="Ingresa un nombre">
+            <p class="input-font">Por favor, ingresa un <b>nombre</b></p>
+        </div>
+        <div class="col-lg-12">
+            <label class="form-label input-font">Descripcion</label>
+            <input [(ngModel)]="area.descripcion" type="text" name="descripcion" class="form-control input-font" placeholder="Ingresa la descripcion">
+            <p class="input-font">Por favor, ingresa la <b>descripcion</b></p>
+        </div>
+        <div class="col-lg-12">
+          <label class="form-label input-font">Estado</label>
+          <select [(ngModel)]="area.estado" class="form-select input-font" name="estado" id="estado">
+            <option value="0" disabled>[Seleccione]</option>
+            <option value="1">Activo</option>
+            <option value="2">Inactivo</option>
+          </select>
+        </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" cdkFocusInitial (click)="onEditar()">Editar</button>
+</mat-dialog-actions>

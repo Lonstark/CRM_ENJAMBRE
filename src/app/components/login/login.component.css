@@ -1,0 +1,96 @@
+/* login.component.css */
+mat-card {
+  max-width: 600px;
+  margin: 15px;
+  height: 350px;
+  margin-top: 30px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 20px;
+  background-color: #C381C4 !important;
+  font-size: 11pt !important;
+}
+
+.container-login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../../assets/img/bg-enjambre.png);
+  background-size: cover;
+  background-color: #FD7102;
+}
+
+.container-form-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form-login mat-card {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.formulario {
+  margin-top: 40px;
+}
+
+.input-font{
+  font-size: 11pt !important;
+}
+
+.form-label{
+  font-size: 11pt !important;
+}
+
+/*::ng-deep .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label{
+  color: rgb(0, 38, 255) !important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading,
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch,
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing{
+  border-color: rgb(0, 174, 255) !important;
+}
+*/
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+ .marca{
+  display: none;
+ }
+
+ .input-font{
+  font-size: 10pt !important;
+}
+
+.form-label{
+  font-size: 10pt !important;
+}
+
+.button{
+  font-size: 10pt !important;
+}
+
+.container-login{
+  background-image: url(../../../assets/img/bg-movil-enjambre.png);
+  background-size: cover;
+}
+
+}
+

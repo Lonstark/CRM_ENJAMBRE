@@ -1,0 +1,40 @@
+<div class="border-bottom">
+  <h2 mat-dialog-title>Nuevo Certificado</h2>
+</div>
+<mat-dialog-content class="mat-typography dialog-certificado">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-lg-12">
+        <label class="form-label input-font">Empresa</label>
+        <select class="select2 form-control input-font" name="empresas" id="empresas">
+          <option disabled value="0">[Seleccione]</option>
+          <option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">{{ empresa.descripcion }}</option>
+        </select>
+        <p class="input-font-help">Por favor, selecciona una <b>empresa</b></p>
+      </div>
+      <div class="col-lg-12">
+        <label class="form-label input-font">Cliente</label>
+        <select class="select2 form-control input-fontt" name="clientes" id="clientes">
+        </select>
+        <p class="input-font-help">Por favor, selecciona un <b>cliente</b></p>
+      </div>
+      <div class="col-lg-12">
+        <label class="form-label input-font">Nombre</label>
+        <input type="text" [(ngModel)]="certificado.descripcion" name="descripcion" id="descripcion" class="form-control input-font" placeholder="Ingresa un nombre">
+        <p class="input-font-help">Por favor, ingresa un <b>nombre</b></p>
+      </div>
+      <div class="col-lg-12">
+        <label class="form-label input-font">Estado</label>
+        <select [(ngModel)]="certificado.estado" class="select2 form-select input-font" name="estado" id="estado">
+          <option value="1">Activo</option>
+          <option value="2">Inactivo</option>
+        </select>
+        <p class="input-font-help">Por favor, selecciona un <b>estado</b></p>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" cdkFocusInitial (click)="onRegistrar()">Registrar</button>
+</mat-dialog-actions>

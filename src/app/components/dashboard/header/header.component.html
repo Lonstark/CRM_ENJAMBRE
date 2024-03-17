@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <mat-toolbar class="toolbar d-flex justify-content-between">
+    <button id="icon-open-side" class="text-dark menu-toggle" mat-icon-button (click)="toggleSidebarClick()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="user-info">
+      <div class="d-flex justify-content-center align-items-center nombre-perfil">
+        Hola, <b class="ms-1">{{ usuarioActual?.nombres }} {{ usuarioActual?.apellidos }}</b>
+      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="user-menu-button">
+        <mat-icon>
+          <div class="d-flex justify-content-center align-items-center">
+            <img class="img1" src="../../../../assets/img/perfil.png" alt="perfil">
+          </div>
+        </mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <p class="text-center pt-2 font-perfil perfil-detail">{{ usuarioActual?.nombres }} {{ usuarioActual?.apellidos }}</p>
+        <p class="text-center pt-2 font-perfil" *ngFor="let rol of usuarioActual?.perfil">{{ rol.nombre }}</p>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          Cerrar sesión
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</mat-toolbar>

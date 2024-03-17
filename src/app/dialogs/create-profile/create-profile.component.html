@@ -1,0 +1,45 @@
+<div class="border-bottom">
+    <h2 mat-dialog-title>Nuevo Perfil</h2>
+</div>
+<mat-dialog-content class="mat-typography profile-container">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-lg-12">
+                <label class="form-label input-font">Nombre</label>
+                <input type="text" class="form-control input-font" placeholder="Nombre" [(ngModel)]="perfil.nombre">
+                <p class="input-font">Por favor, ingresa un <b>nombre</b></p>
+            </div>
+            <div class="col-lg-12">
+                <label class="form-label input-font">Menu</label>
+                <div class="form-check" *ngFor="let menu of menus">
+                    <input class="form-check-input input-font" type="checkbox" value="" [id]="'menu' + menu.idMenu" (change)="toggleMenu(menu)">
+                    <label class="form-check-label input-font" [for]="'menu' + menu.idMenu">
+                        {{ menu.nombre }}
+                    </label>
+                    <div *ngIf="menu.showSubMenu">
+                        <div class="form-check" *ngFor="let submenu of subMenusMap.get(menu.idMenu!)">
+                            <input class="form-check-input input-font" type="checkbox" value="" [id]="'submenu' + submenu.idSubmenu" (change)="toggleSubMenu(submenu)">
+                            <label class="form-check-label input-font" [for]="'submenu' + submenu.idSubmenu">
+                              {{ submenu.nombre }}
+                            </label>
+                            <div *ngIf="submenu.showSubMenu">
+                                <div class="form-check ms-2" *ngFor="let accion of accionesMap.get(submenu.idSubmenu!)">
+                                    <input class="form-check-input input-font" type="checkbox" value="" [id]="'accion' + accion.idAccion" (change)="toggleAcciones(accion)">
+                                    <label class="form-check-label input-font" [for]="'accion' + accion.idAccion">{{ accion.nombre }}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-flat-button mat-dialog-close>Cancelar</button>
+    <button mat-flat-button color="primary" (click)="registerPerfilAndAcciones()" cdkFocusInitial>Registrar</button>
+</mat-dialog-actions>
+
+
+
+<!-- (click)="registerPerfilAndAcciones()" -->
